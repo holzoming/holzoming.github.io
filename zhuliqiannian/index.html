@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="朱丽倩年轻时的照片展示页面，汇集朱丽倩早期写真、演艺生涯初期及私人生活时期的珍贵影像资料，提供高清图片浏览与详细背景介绍。">
+    <meta name="keywords" content="朱丽倩年轻时的照片,朱丽倩写真,朱丽倩早期照片,刘德华妻子,朱丽倩">
+    <title>朱丽倩年轻时的照片-珍贵影像与早期写真回顾</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background: var(--card-bg);
+            padding: 16px 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 32px;
+        }
+
+        .filter-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+
+        /* Gallery Grid */
+        .gallery-section {
+            padding: 20px var(--spacing-unit);
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            padding-left: 12px;
+            border-left: 4px solid var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .photo-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+        }
+
+        .img-wrapper {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-card:hover .img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: #999;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Info Section */
+        .info-section {
+            background-color: #fff;
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .info-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .info-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .info-text p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        .info-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .footer-text {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            }
+            
+            .img-wrapper {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>📷</span> 朱丽倩影像馆
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">早期写真</a>
+                <a href="#">演艺时期</a>
+                <a href="#">私服街拍</a>
+                <a href="#">人物背景</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>朱丽倩年轻时的照片</h1>
+            <p>回顾朱丽倩小姐青春岁月中的珍贵影像，从早期平面模特到进入公众视野的青涩模样。</p>
+        </div>
+    </section>
+
+    <div class="filter-bar">
+        <div class="filter-container">
+            <button class="filter-btn active">全部</button>
+            <button class="filter-btn">平面写真</button>
+            <button class="filter-btn">影视剧照</button>
+            <button class="filter-btn">私服街拍</button>
+            <button class="filter-btn">生活照</button>
+        </div>
+    </div>
+
+    <main class="gallery-section">
+        <h2 class="section-title">精选影像回顾</h2>
+        
+        <div class="gallery-grid">
+            <!-- Card 1 -->
+            <article class="photo-card">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/seed/zuliqian1/400/500" alt="朱丽倩早期平面写真">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">早期平面写真精选</h3>
+                    <p class="card-desc">刊登于80年代末90年代初的杂志封面及内页，展现朱丽倩青涩而清纯的模特形象。</p>
+                    <div class="card-meta">
+                        <span>年代：1989年</span>
+                        <span>来源：星岛日报</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="photo-card">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/seed/zuliqian2/400/500" alt="朱丽倩私服街拍">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">街头私服风格</h3>
+                    <p class="card-desc">90年代香港街头常见的休闲装扮，体现了当时年轻人的时尚品味，笑容甜美。</p>
+                    <div class="card-meta">
+                        <span>年代：1991年</span>
+                        <span>类型：生活记录</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="photo-card">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/seed/zuliqian3/400/500" alt="朱丽倩舞台照">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">歌唱比赛舞台照</h3>
+                    <p class="card-desc">参加“新秀歌唱大赛”时的官方宣传照，气质高雅，五官精致。</p>
+                    <div class="card-meta">
+                        <span>年代：1990年</span>
+                        <span>来源：TVB资料</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="photo-card">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/seed/zuliqian4/400/500" alt="朱丽倩杂志内页">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">杂志内页高清图</h3>
+                    <p class="card-desc">多套不同风格的造型展示，包括短发造型与长发造型，极具辨识度。</p>
+                    <div class="card-meta">
+                        <span>年代：1988年</span>
+                        <span>类型：平面模特</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="photo-card">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/seed/zuliqian5/400/500" alt="朱丽倩与朋友聚会">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">好友聚会留念</h3>
+                    <p class="card-desc">在马来西亚吉隆坡社交圈中的留影，展现了当时她作为富家千金的生活状态。</p>
+                    <div class="card-meta">
+                        <span>年代：1992年</span>
+                        <span>类型：社交生活</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="photo-card">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/seed/zuliqian6/400/500" alt="朱丽倩剪发造型">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">标志性的短发造型</h3>
+                    <p class="card-desc">朱丽倩曾留过一段时期的中性短发，这一形象在当时非常前卫，广受关注。</p>
+                    <div class="card-meta">
+                        <span>年代：1990年</span>
+                        <span>类型：造型记录</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <section class="info-section">
+        <div class="info-container">
+            <div class="info-grid">
+                <div class="info-text">
+                    <h2>关于朱丽倩的早期影像</h2>
+                    <p>朱丽倩（Carol Chu），1966年出生于马来西亚吉隆坡，祖籍中国福建。在遇到刘德华之前，她曾是一名平面模特和歌手。</p>
+                    <p><strong>模特生涯：</strong> 80年代末，朱丽倩开始在香港和马来西亚的杂志上发表写真。她拥有高挑的身材和精致的五官，早期的照片多以清纯、自然为主，常见于《YES!》、《东方新地》等杂志的封面。</p>
+                    <p><strong>歌唱经历：</strong> 1990年，朱丽倩参加了香港无线电视（TVB）主办的“第五届新秀歌唱大赛”，虽然未能获奖，但这次亮相让她开始进入香港演艺圈的视野。这段时期的照片通常带有舞台表演或比赛宣传的性质。</p>
+                    <p>这些“朱丽倩年轻时的照片”不仅记录了她个人的成长轨迹，也成为了许多刘德华粉丝了解偶像伴侣过往的重要窗口。</p>
+                </div>
+                <div class="info-image">
+                    <img src="https://picsum.photos/seed/zuliqian_portrait/600/400" alt="朱丽倩早期肖像">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">本站致力于整理与展示历史影像资料，仅供文化交流与回忆参考。</p>
+            <p class="footer-text">© 2023 朱丽倩影像馆 版权所有</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的筛选按钮交互逻辑
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // 移除所有 active 类
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // 给当前点击的按钮添加 active 类
+                this.classList.add('active');
+                
+                // 实际应用中这里会根据类别过滤图片显示，这里仅做视觉反馈
+                const category = this.innerText;
+                console.log(`筛选类别：${category}`);
+            });
+        });
+    </script>
+</body>
+</html>
