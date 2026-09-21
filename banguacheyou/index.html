@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="半挂车游戏在线试玩，提供逼真的重型卡车驾驶模拟体验。包含长途货运、地形挑战、车辆改装等核心玩法，支持键盘与手柄操作，还原真实的物流运输驾驶乐趣。">
+    <meta name="keywords" content="半挂车游戏,卡车模拟,模拟驾驶,货运游戏,硬派驾驶">
+    <title>半挂车游戏-硬派长途货运模拟与驾驶体验平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a237e;
+            --accent-color: #ff6f00;
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #ffffff;
+            --text-secondary: #b0bec5;
+            --border-color: #333333;
+            --font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0.8rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .cta-btn:hover {
+            background-color: #e65100;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/truckhero/1920/1080') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--text-main);
+            color: var(--text-main);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Game Modes Section */
+        .game-modes {
+            padding: 80px 0;
+            background-color: #181818;
+        }
+
+        .modes-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .modes-image {
+            position: relative;
+        }
+
+        .modes-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .modes-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .modes-content p {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .mode-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .mode-list .check {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Specs & Controls */
+        .specs {
+            padding: 60px 0;
+        }
+
+        .specs-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .specs-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .specs-list {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .specs-list h3 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .spec-label {
+            color: var(--text-secondary);
+        }
+
+        .spec-value {
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-secondary);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #555;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .modes-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color)"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                <span>半挂车</span>模拟
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#gameplay">游戏玩法</a></li>
+                    <li><a href="#specs">车辆参数</a></li>
+                    <li><a href="#download">下载试玩</a></li>
+                </ul>
+            </nav>
+            <a href="#download" class="cta-btn">开始驾驶</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>征服长途公路<br>体验真实的半挂车驾驶</h1>
+                <p>沉浸式硬派驾驶模拟，还原复杂的物流运输环境。从重型牵引车到精密的货物装载，每一公里都需要专注与技巧。</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('download')">立即试玩</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('specs')">查看参数</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="gameplay">
+            <div class="container">
+                <h2 class="section-title">核心驾驶体验</h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🚛</div>
+                        <h3>真实物理引擎</h3>
+                        <p>采用先进的车辆动力学模拟，精准还原半挂车在高速、急转弯和复杂路况下的惯性表现。刹车距离、轮胎抓地力均有详细数据支持。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🗺️</div>
+                        <h3>广阔开放世界</h3>
+                        <p>包含数千平方公里的真实地图，涵盖城市、山区、高速公路和荒野。动态天气系统和昼夜循环，带来沉浸式的长途驾驶挑战。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3>深度车辆改装</h3>
+                        <p>支持对车辆外观和性能进行深度改装。更换不同品牌的挂车、升级引擎动力、优化悬挂系统，打造专属于你的物流运输王牌。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-modes">
+            <div class="container modes-container">
+                <div class="modes-image">
+                    <img src="https://picsum.photos/seed/truckroad/800/600" alt="半挂车在公路行驶">
+                </div>
+                <div class="modes-content">
+                    <h2>多元化的游戏模式</h2>
+                    <p>无论你是追求速度的赛车手，还是注重细节的物流专家，这里都有适合你的挑战。</p>
+                    <ul class="mode-list">
+                        <li>
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>长途货运挑战</strong>
+                                <p style="font-size:0.9rem; color:#888;">完成指定路线运输，在规定时间内抵达目的地。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>倒车入库特训</strong>
+                                <p style="font-size:0.9rem; color:#888;">在狭窄的货运站和港口练习高难度倒车操作。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>模拟经营系统</strong>
+                                <p style="font-size:0.9rem; color:#888;">积累资金，雇佣司机，扩大你的物流车队规模。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="specs" id="specs">
+            <div class="container specs-layout">
+                <div class="specs-text">
+                    <h2>技术规格与支持</h2>
+                    <p style="color:var(--text-secondary); margin-bottom:20px;">
+                        为了确保最佳的驾驶手感，我们的半挂车游戏针对硬件进行了深度优化，支持主流PC及移动端设备。
+                    </p>
+                    <p style="color:var(--text-secondary);">
+                        游戏支持多种操作方式，包括键盘WASD、方向盘手柄以及VR设备，让你以第一人称视角体验司机的视角。
+                    </p>
+                </div>
+                <div class="specs-list">
+                    <h3>系统配置要求</h3>
+                    <div class="spec-item">
+                        <span class="spec-label">最低配置</span>
+                        <span class="spec-value">Intel i3 / 8GB RAM / GTX 660</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">推荐配置</span>
+                        <span class="spec-value">Intel i7 / 16GB RAM / GTX 1060</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">操作系统</span>
+                        <span class="spec-value">Windows 10 64-bit</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">存储空间</span>
+                        <span class="spec-value">需要 50GB 可用空间</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">控制器支持</span>
+                        <span class="spec-value">Xbox/PlayStation/罗技方向盘</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="download" style="background-color: #151515;">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title">准备好上路了吗？</h2>
+                <p style="margin-bottom: 40px; color: var(--text-secondary); max-width: 600px; margin-left: auto; margin-right: auto;">
+                    加入成千上万的卡车司机，体验最真实的公路生活。现在下载即可免费体验新手教程包。
+                </p>
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <button class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 40px;">Windows 下载</button>
+                    <button class="btn btn-secondary" style="font-size: 1.2rem; padding: 15px 40px;">查看更新日志</button>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.8rem; color: #666;">版本 v2.4.1 | 大小 4.2GB | 更新日期 2023-10</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 15px;">
+                        <span>半挂车</span>模拟
+                    </div>
+                    <p style="color: #666; font-size: 0.9rem;">
+                        致力于提供最真实的重型卡车驾驶模拟体验，连接全球玩家。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">游戏首页</a></li>
+                        <li><a href="#">社区论坛</a></li>
+                        <li><a href="#">玩家指南</a></li>
+                        <li><a href="#">支持与反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>游戏分类</h4>
+                    <ul>
+                        <li><a href="#">公路运输</a></li>
+                        <li><a href="#">城市配送</a></li>
+                        <li><a href="#">危险品运输</a></li>
+                        <li><a href="#">紧急救援</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">Discord社区</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 半挂车模拟游戏平台. All Rights Reserved. 仅供展示用途.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
