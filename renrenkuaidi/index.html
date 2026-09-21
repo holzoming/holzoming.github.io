@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="人人快递官方首页，提供安全、高效的个人间互助快递服务。注册成为合伙人，随时随地接单、送件，赚取额外收入。查看运费标准、配送规则及平台保障。">
+    <meta name="keywords" content="人人快递,互助快递,同城快递,兼职送件,快递接单">
+    <title>人人快递-互助快递平台与个人送件接单指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b00;
+            --primary-hover: #e65c00;
+            --secondary-color: #2c3e50;
+            --bg-light: #f8f9fa;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --border-color: #e0e0e0;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff5eb 0%, #ffffff 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #fff0e6;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-sub);
+            margin-bottom: 35px;
+            max-width: 550px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            color: var(--text-sub);
+            margin: 0;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .section-header p {
+            color: var(--text-sub);
+            font-size: 16px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            background: var(--bg-light);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: #fff;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: var(--text-sub);
+            font-size: 15px;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: #e0e0e0;
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        /* Join Section */
+        .join-section {
+            padding: 80px 0;
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .join-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .join-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .join-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .join-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .join-form button {
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: none;
+            background: var(--secondary-color);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .join-form button:hover {
+            background: #1a252f;
+        }
+
+        /* Rules & Safety */
+        .rules-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .rules-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .rules-content h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .rules-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            color: var(--text-sub);
+        }
+
+        .rules-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .rules-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: #bdc3c7;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                height: auto;
+                padding: 15px 0;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero p {
+                margin: 0 auto 30px;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .steps::before {
+                display: none;
+            }
+
+            .steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .rules-container {
+                grid-template-columns: 1fr;
+            }
+
+            .join-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>◆</span> 人人快递
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">合伙人招募</a></li>
+                    <li><a href="#">运费标准</a></li>
+                    <li><a href="#">安全保障</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">注册合伙人</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="hero-tag">个人互助 · 省钱省心</span>
+                    <h1>身边的互助快递，<br>让出行更有温度</h1>
+                    <p>人人快递是基于“互助”理念的移动互联网服务平台。您不仅可以享受更实惠的寄件服务，还能成为合伙人，在接送朋友、上下班的途中接单，赚取额外收入。</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="#" class="btn btn-primary" style="padding: 12px 30px; font-size: 16px;">立即注册接单</a>
+                        <a href="#" class="btn btn-outline" style="padding: 12px 30px; font-size: 16px;">查看运费表</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>500万+</h3>
+                            <p>注册合伙人</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100万+</h3>
+                            <p>日均订单量</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>300+</h3>
+                            <p>覆盖城市</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/logistics/600/400" alt="人人快递平台展示" width="600" height="400">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择人人快递？</h2>
+                    <p>独特的互助模式，为您提供极致的物流体验</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>互助模式</h3>
+                        <p>快递员也是您的邻居。通过平台匹配，将顺路包裹交给顺路的人，真正实现“顺路带，顺便赚”。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>超低运费</h3>
+                        <p>省去中间环节，通过互助快递，您能享受比传统快递更实惠的价格，寄件更省钱。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>全程保障</h3>
+                        <p>平台提供运费担保和保险服务，一旦包裹丢失或损坏，由平台先行赔付，让您无后顾之忧。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>极速达</h3>
+                        <p>同城互助，时效更快。相比传统快递，您的包裹能以更快的速度送达目的地。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2>如何开始您的互助之旅？</h2>
+                    <p>简单三步，轻松成为平台合伙人</p>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>注册认证</h3>
+                        <p>填写真实信息，完成实名认证和驾驶证认证，确保您的身份与配送能力。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>接单配送</h3>
+                        <p>开启接单模式，系统根据您的位置和路线智能推荐订单，您可自由选择。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>赚取收益</h3>
+                        <p>完成配送并经收件人确认，佣金将自动打入您的账户，提现秒到账。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules & Safety -->
+        <section class="rules-section">
+            <div class="container">
+                <div class="rules-container">
+                    <div class="rules-image">
+                        <img src="https://picsum.photos/seed/safety/600/400" alt="安全配送流程" width="600" height="400">
+                    </div>
+                    <div class="rules-content">
+                        <h3>安全规范与保障体系</h3>
+                        <p style="margin-bottom: 20px; color: #666;">为了确保每一位用户的权益，我们制定了严格的规则和保障措施：</p>
+                        <ul class="rules-list">
+                            <li><strong>实名认证：</strong>所有合伙人必须经过严格的身份审核。</li>
+                            <li><strong>保险覆盖：</strong>平台为每一单提供价值100元的意外保险。</li>
+                            <li><strong>运费担保：</strong>寄件人付款后资金由平台托管，确认送达后才结算给配送员。</li>
+                            <li><strong>纠纷处理：</strong>设有专门的客服团队处理订单异常和投诉。</li>
+                            <li><strong>违禁品管理：</strong>严禁运送易燃易爆、违禁药品等危险品。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join CTA -->
+        <section class="join-section">
+            <div class="container">
+                <h2>现在加入，开启您的赚钱之旅</h2>
+                <p>每天接送朋友、上下班，把顺路变成收入</p>
+                <form class="join-form" onsubmit="event.preventDefault(); alert('演示页面：请访问官网进行注册。');">
+                    <input type="tel" placeholder="请输入手机号码" required>
+                    <button type="submit">立即注册</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="color: white; margin-bottom: 20px;">
+                        <span>◆</span> 人人快递
+                    </div>
+                    <p style="font-size: 14px; line-height: 1.8;">
+                        人人快递是国内领先的互助物流服务平台，致力于通过移动互联网技术，让每一次出行都充满价值。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">发展历程</a></li>
+                        <li><a href="#">管理团队</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="#">寄件指南</a></li>
+                        <li><a href="#">接单教程</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">投诉建议</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>合作伙伴</h4>
+                    <ul>
+                        <li><a href="#">商家入驻</a></li>
+                        <li><a href="#">企业合作</a></li>
+                        <li><a href="#">API接口</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 人人快递 版权所有 | 京ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
