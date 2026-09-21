@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="桃花小说 - 提供最新热门言情小说、玄幻修真、都市情感等类型小说的在线阅读平台，海量免费小说资源，更新及时，阅读流畅。">
+    <meta name="keywords" content="桃花小说, 在线阅读, 免费小说, 网络小说, 言情小说, 玄幻小说, 都市小说">
+    <title>桃花小说-海量免费网络小说在线阅读平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d63384;
+            --primary-hover: #b02a6b;
+            --secondary-color: #ff85a2;
+            --bg-color: #fdf6f9;
+            --card-bg: #ffffff;
+            --text-main: #2c2c2c;
+            --text-sub: #666666;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(214, 51, 132, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .search-box {
+            display: flex;
+            background: #f0f0f0;
+            border-radius: 20px;
+            padding: 5px 15px;
+            align-items: center;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            padding: 5px;
+            font-size: 14px;
+            width: 200px;
+        }
+
+        .search-box button {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            color: var(--text-sub);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff0f6 0%, #ffe4e1 100%);
+            padding: 60px 0;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            color: var(--text-sub);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-main);
+            border: 1px solid rgba(214, 51, 132, 0.2);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag:hover {
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        /* Section Title */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .more-link {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        .more-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Book Grid */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .book-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .book-info {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .book-meta {
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .book-author {
+            color: var(--primary-color);
+        }
+
+        .book-intro {
+            font-size: 13px;
+            color: #888;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .book-tags span {
+            display: inline-block;
+            font-size: 11px;
+            padding: 2px 6px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            color: #666;
+            margin-right: 4px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .rank-list {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .rank-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            font-size: 18px;
+            font-weight: 700;
+            width: 30px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .rank-num.top-1 { color: #ff4757; }
+        .rank-num.top-2 { color: #ffa502; }
+        .rank-num.top-3 { color: #2ed573; }
+
+        .rank-info {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .rank-title {
+            font-size: 14px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .rank-update {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        .category-list {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .cat-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #f5f5f5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .cat-item:hover {
+            background: #fff0f6;
+            color: var(--primary-color);
+        }
+
+        .cat-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            background: #fff;
+            padding: 40px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            margin-left: 20px;
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .search-box { display: none; }
+            .main-content { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 28px; }
+            .book-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">桃花小说<span>在线阅读</span></a>
+        <nav class="nav-menu">
+            <a href="#" class="active">首页</a>
+            <a href="#">玄幻</a>
+            <a href="#">言情</a>
+            <a href="#">都市</a>
+            <a href="#">历史</a>
+            <a href="#">科幻</a>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索书名、作者...">
+            <button>🔍</button>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>遇见你的下一个心动故事</h1>
+        <p>收录全网热门网络小说，涵盖玄幻、言情、都市、历史等数十万部作品，阅读体验流畅，更新及时。</p>
+        <div class="hero-tags">
+            <span class="tag">🔥 热门连载</span>
+            <span class="tag">✨ 全本完结</span>
+            <span class="tag">📝 精彩推荐</span>
+            <span class="tag">⭐ 新书首发</span>
+        </div>
+    </section>
+
+    <div class="main-content">
+        <!-- Left Column: Content -->
+        <section class="content-area">
+            <!-- Hot Books -->
+            <div class="section-header">
+                <h2 class="section-title">今日热门推荐</h2>
+                <a href="#" class="more-link">查看更多 &gt;</a>
+            </div>
+            <div class="book-grid">
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/xh1/300/400" alt="玄幻封面" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">万古神帝</h3>
+                        <div class="book-meta">
+                            <span class="book-author">飞天鱼</span>
+                            <span>8.9分</span>
+                        </div>
+                        <p class="book-intro">张若尘身负血海深仇，从地球穿越而来，誓要踏碎凌霄，重掌乾坤。</p>
+                        <div class="book-tags">
+                            <span>玄幻</span><span>热血</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/xh2/300/400" alt="言情封面" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">原来你还在这里</h3>
+                        <div class="book-meta">
+                            <span class="book-author">辛夷坞</span>
+                            <span>8.5分</span>
+                        </div>
+                        <p class="book-intro">程铮与苏韵锦的十年纠葛，从青涩校园到职场打拼，爱恨交织。</p>
+                        <div class="book-tags">
+                            <span>都市</span><span>言情</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/xh3/300/400" alt="历史封面" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">大秦帝国之崛起</h3>
+                        <div class="book-meta">
+                            <span class="book-author">孙皓晖</span>
+                            <span>9.1分</span>
+                        </div>
+                        <p class="book-intro">讲述战国末期秦国在昭襄王领导下，如何变法图强，一统天下的史诗。</p>
+                        <div class="book-tags">
+                            <span>历史</span><span>权谋</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/xh4/300/400" alt="科幻封面" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">三体全集</h3>
+                        <div class="book-meta">
+                            <span class="book-author">刘慈欣</span>
+                            <span>9.8分</span>
+                        </div>
+                        <p class="book-intro">人类与外星文明的第一次接触，宏大的宇宙社会学，硬核科幻巅峰。</p>
+                        <div class="book-tags">
+                            <span>科幻</span><span>经典</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/xh5/300/400" alt="言情封面" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">你是我的荣耀</h3>
+                        <div class="book-meta">
+                            <span class="book-author">顾漫</span>
+                            <span>8.6分</span>
+                        </div>
+                        <p class="book-intro">航天设计师于途与当红女星乔晶晶的跨次元恋爱，甜宠治愈。</p>
+                        <div class="book-tags">
+                            <span>都市</span><span>甜宠</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/xh6/300/400" alt="玄幻封面" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">完美世界</h3>
+                        <div class="book-meta">
+                            <span class="book-author">辰东</span>
+                            <span>9.0分</span>
+                        </div>
+                        <p class="book-intro">荒天帝石昊独自面对黑暗动乱，征战诸天，只为守护身边的亲友。</p>
+                        <div class="book-tags">
+                            <span>玄幻</span><span>热血</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- New Updates -->
+            <div class="section-header" style="margin-top: 40px;">
+                <h2 class="section-title">最新更新</h2>
+                <a href="#" class="more-link">更多章节 &gt;</a>
+            </div>
+            <div class="book-grid">
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/xy1/300/400" alt="更新封面" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">仙逆</h3>
+                        <div class="book-meta">
+                            <span class="book-author">耳根</span>
+                            <span>10分钟前</span>
+                        </div>
+                        <p class="book-intro">王林从凡人到逆仙的艰辛历程，杀伐果断，道心坚定。</p>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/xy2/300/400" alt="更新封面" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">大主宰</h3>
+                        <div class="book-meta">
+                            <span class="book-author">天蚕土豆</span>
+                            <span>25分钟前</span>
+                        </div>
+                        <p class="book-intro">牧尘统领万兽之巅，在苍茫大陆上演绎热血传奇。</p>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/xy3/300/400" alt="更新封面" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">择天记</h3>
+                        <div class="book-meta">
+                            <span class="book-author">猫腻</span>
+                            <span>1小时前</span>
+                        </div>
+                        <p class="book-intro">少年陈长生为了改变命运，踏入最强者的世界。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Right Column: Sidebar -->
+        <aside class="sidebar">
+            <!-- Ranking -->
+            <div class="rank-list">
+                <h3 class="section-title" style="font-size: 18px; margin-bottom: 15px;">排行榜</h3>
+                <div class="rank-item">
+                    <span class="rank-num top-1">1</span>
+                    <div class="rank-info">
+                        <a href="#" class="rank-title">诡秘之主</a>
+                        <span class="rank-update">昨天 18:00 更新</span>
+                    </div>
+                </div>
+                <div class="rank-item">
+                    <span class="rank-num top-2">2</span>
+                    <div class="rank-info">
+                        <a href="#" class="rank-title">庆余年</a>
+                        <span class="rank-update">昨天 20:30 更新</span>
+                    </div>
+                </div>
+                <div class="rank-item">
+                    <span class="rank-num top-3">3</span>
+                    <div class="rank-info">
+                        <a href="#" class="rank-title">雪中悍刀行</a>
+                        <span class="rank-update">昨天 16:45 更新</span>
+                    </div>
+                </div>
+                <div class="rank-item">
+                    <span class="rank-num">4</span>
+                    <div class="rank-info">
+                        <a href="#" class="rank-title">将夜</a>
+                        <span class="rank-update">昨天 15:20 更新</span>
+                    </div>
+                </div>
+                <div class="rank-item">
+                    <span class="rank-num">5</span>
+                    <div class="rank-info">
+                        <a href="#" class="rank-title">斗破苍穹</a>
+                        <span class="rank-update">昨天 14:10 更新</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="category-list">
+                <h3 class="section-title" style="font-size: 18px; margin-bottom: 15px;">全部分类</h3>
+                <a href="#" class="cat-item">玄幻修真 <span>›</span></a>
+                <a href="#" class="cat-item">都市言情 <span>›</span></a>
+                <a href="#" class="cat-item">历史军事 <span>›</span></a>
+                <a href="#" class="cat-item">科幻灵异 <span>›</span></a>
+                <a href="#" class="cat-item">武侠仙侠 <span>›</span></a>
+                <a href="#" class="cat-item">游戏竞技 <span>›</span></a>
+            </div>
+
+            <!-- Ad Placeholder -->
+            <div style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%); height: 250px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold; font-size: 18px;">
+                广告位
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <div class="logo" style="font-size: 20px;">桃花小说</div>
+        <div class="copyright">
+            &copy; 2023 桃花小说在线阅读平台. All Rights Reserved.
+        </div>
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">版权声明</a>
+            <a href="#">联系客服</a>
+            <a href="#">用户协议</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+  </html>
