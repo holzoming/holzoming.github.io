@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情战 - 热门情感博弈与恋爱心理深度解析</title>
+    <meta name="description" content="情战网提供专业的情感博弈策略、恋爱心理学分析、高情商沟通技巧及情感挽回指南。深入剖析两性心理博弈，助您在情感关系中掌握主动权，建立健康亲密关系。">
+    <meta name="keywords" content="情战,情感博弈,恋爱心理学,两性关系,高情商沟通,情感挽回">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d63384; /* 玫红，代表情感与张力 */
+            --secondary-color: #f8f9fa; /* 浅灰背景 */
+            --text-main: #212529;
+            --text-light: #6c757d;
+            --accent-color: #ff8fab;
+            --border-radius: 12px;
+            --container-width: 1200px;
+            --spacing-unit: 1.5rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #fff0f6 0%, #fff 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            line-height: 1.3;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #b02a6b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(214, 51, 132, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* 内容板块 */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .bg-light {
+            background-color: var(--secondary-color);
+        }
+
+        /* 核心概念卡片 */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* 案例与策略列表 */
+        .strategy-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .strategy-item {
+            display: flex;
+            gap: 1.5rem;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            align-items: center;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .strategy-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: rgba(214, 51, 132, 0.15);
+            line-height: 1;
+        }
+
+        .strategy-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .strategy-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 常见问题 */
+        .faq-item {
+            background: #fff;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: #fff;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-light);
+            display: none; /* 默认隐藏，JS控制 */
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* 简化处理，移动端隐藏菜单 */
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .strategy-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .strategy-number {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                情战<span>网</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#concepts">核心概念</a>
+                <a href="#strategies">博弈策略</a>
+                <a href="#guide">关系指南</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <button class="search-btn" aria-label="搜索">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>在情感中掌握<strong>主动权</strong>，读懂人心，智胜关系</h1>
+                <p>不仅仅是恋爱技巧，更是深度的心理博弈与人性洞察。通过科学的沟通策略与心理分析，帮助您在复杂的两性关系中建立自信，实现情感共赢。</p>
+                <div class="cta-buttons">
+                    <a href="#strategies" class="btn btn-primary">查看策略指南</a>
+                    <a href="#concepts" class="btn btn-outline">了解心理学基础</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心概念 -->
+        <section id="concepts" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>什么是“情战”？</h2>
+                    <p>情战并非为了算计，而是为了更健康的相处</p>
+                </div>
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-icon">🎯</div>
+                        <h3>心理博弈</h3>
+                        <p>理解双方潜意识里的需求与防御机制，通过非语言信号解读对方的真实意图，避免无效沟通。</p>
+                        <a href="#" class="card-link">深入了解 →</a>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">🛡️</h3>
+                        <h3>建立边界</h3>
+                        <p>健康的情战需要清晰的底线。学会在亲密关系中保持独立性，既不依赖也不疏离，确立平等地位。</p>
+                        <a href="#" class="card-link">建立边界 →</a>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">🤝</div>
+                        <h3>情感价值</h3>
+                        <p>提升自身情绪价值，成为关系中不可替代的“资源”。通过提供安全感、愉悦感和被理解感来吸引对方。</p>
+                        <a href="#" class="card-link">提升价值 →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 策略列表 -->
+        <section id="strategies" class="section bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>高阶博弈策略</h2>
+                    <p>从被动接受到主动引导的进阶之路</p>
+                </div>
+                <div class="strategy-list">
+                    <div class="strategy-item">
+                        <div class="strategy-number">01</div>
+                        <div class="strategy-content">
+                            <h3>推拉技巧</h3>
+                            <p>忽冷忽热不是情绪化，而是制造心理预期。通过适度的拒绝和肯定，激发对方的征服欲和探索欲。</p>
+                        </div>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-number">02</div>
+                        <div class="strategy-content">
+                            <h3>镜像模仿</h3>
+                            <p>在肢体语言和语速上微调以匹配对方，建立潜意识的共鸣感。这能迅速拉近心理距离，降低对方的戒备心。</p>
+                        </div>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-number">03</div>
+                        <div class="strategy-content">
+                            <h3>需求置换</h3>
+                            <p>当对方提出不合理要求时，不要直接对抗，而是用另一种“隐性需求”进行置换，在不撕破脸的情况下达成平衡。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>情战常见问题</h2>
+                    <p>关于博弈与关系的深度解答</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">情战是不是一种操纵？</div>
+                        <div class="faq-answer">
+                            <p>情战的核心在于“洞察”而非“操纵”。真正的情战高手懂得尊重对方的人性，利用心理规律来引导沟通方向，从而达成双方都满意的结局。它反对的是无底线的妥协和盲目的付出。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如果对方不吃这一套怎么办？</div>
+                        <div class="faq-answer">
+                            <p>每个人对“套路”的敏感度不同。如果某种策略失效，说明双方的心理阶段或需求不匹配。此时应停止生硬的技巧应用，转而回归真诚的沟通，了解对方真正的核心需求是什么。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">长期博弈会不会让感情变味？</div>
+                        <div class="faq-answer">
+                            <p>凡事过犹不及。情战是润滑剂，不是主旋律。建议在关键时刻（如矛盾爆发、关系僵局）使用博弈技巧，而在日常生活中保持真诚与坦率，才能维持关系的长久生命力。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 导向性引导 -->
+        <section class="section bg-light">
+            <div class="container" style="text-align: center; padding: 3rem;">
+                <h2 style="margin-bottom: 1rem;">准备好掌握你的情感命运了吗？</h2>
+                <p style="color: var(--text-light); margin-bottom: 2rem;">无论你是正在经历感情危机，还是希望提升恋爱质量，这里都有适合你的策略。</p>
+                <a href="#" class="btn btn-primary">开始自我诊断</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于情战</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        情战网致力于提供最前沿的情感心理学知识与实战技巧，帮助每一个渴望爱与被爱的人，在复杂的社会关系中找到属于自己的幸福坐标。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>核心栏目</h4>
+                    <ul>
+                        <li><a href="#">恋爱心理学</a></li>
+                        <li><a href="#">高情商沟通</a></li>
+                        <li><a href="#">情感挽回</a></li>
+                        <li><a href="#">相亲攻略</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源推荐</h4>
+                    <ul>
+                        <li><a href="#">经典案例复盘</a></li>
+                        <li><a href="#">心理测试</a></li>
+                        <li><a href="#">一对一咨询</a></li>
+                        <li><a href="#">社群交流</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱：support@qingzhan.com</li>
+                        <li>微信：qingzhan_guide</li>
+                        <li>工作时间：9:00 - 22:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 情战网 版权所有 | 仅供学习与交流使用
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                // 关闭其他打开的项
+                document.querySelectorAll('.faq-item').forEach(child => {
+                    if (child !== parent) {
+                        child.classList.remove('active');
+                    }
+                });
+                // 切换当前项
+                parent.classList.toggle('active');
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+                      </html>
