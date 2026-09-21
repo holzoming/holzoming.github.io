@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6个字的情侣网名 - 独特浪漫签名与在线生成工具</title>
+    <meta name="description" content="本站提供海量精选的6个字的情侣网名，包含高冷、可爱、古风、搞笑等多种风格。同时提供在线情侣网名生成器，助你快速找到专属的浪漫签名。">
+    <meta name="keywords" content="6个字的情侣网名,情侣网名,情侣签名,网名大全,网名生成器">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff7eb3;
+            --secondary-color: #ff758c;
+            --accent-color: #7afcff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #fff0f5;
+            --bg-card: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 15px rgba(255, 117, 140, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部样式 */
+        header {
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe6eb 100%);
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 117, 140, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 导航栏 */
+        nav {
+            background: var(--bg-card);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a.active {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 8px 15px 8px 35px;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            outline: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 126, 179, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            font-size: 0.8rem;
+        }
+
+        /* 主要内容区 */
+        main {
+            padding: 40px 0;
+        }
+
+        /* 工具栏 */
+        .toolbar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 117, 140, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* 分类标签 */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 6px 16px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            color: var(--secondary-color);
+            background: white;
+        }
+
+        .tag.active {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        /* 网名展示区 */
+        .names-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .name-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 180px;
+        }
+
+        .name-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 117, 140, 0.3);
+        }
+
+        .name-couple {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .name-item {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            padding: 8px 12px;
+            background: #fff5f8;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px dashed #ffc0cb;
+        }
+
+        .name-item.male {
+            border-left: 4px solid var(--secondary-color);
+            text-align: left;
+        }
+
+        .name-item.female {
+            border-right: 4px solid var(--primary-color);
+            text-align: right;
+        }
+
+        .name-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 8px;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            border: 1px solid #eee;
+            background: white;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-light);
+        }
+
+        .action-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .divider {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #ccc;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: #eee;
+        }
+
+        .divider::before { left: 0; }
+        .divider::after { right: 0; }
+
+        /* 生成器区域 */
+        .generator-section {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-top: 50px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .generator-result {
+            margin-top: 30px;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .result-couple {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .result-item {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            padding: 15px 30px;
+            background: white;
+            border-radius: 50px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .heart-icon {
+            font-size: 1.5rem;
+            color: #ff4757;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #333;
+            color: #999;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #999;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .nav-links { display: none; } /* 简化版移动端隐藏导航 */
+            .names-grid { grid-template-columns: 1fr; }
+            .result-couple { flex-direction: column; gap: 10px; }
+            .result-item { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <h1>6个字的情侣网名</h1>
+            <p class="subtitle">寻找属于你们的独特浪漫，不仅是网名，更是爱的证明</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container nav-inner">
+            <div class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">热门推荐</a>
+                <a href="#">高冷风格</a>
+                <a href="#">可爱风格</a>
+                <a href="#">古风诗词</a>
+            </div>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="搜索6字网名...">
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- 工具栏 -->
+        <section class="toolbar">
+            <button class="btn btn-primary" onclick="generateCoupleNames()">
+                ✨ 在线生成一对
+            </button>
+            <button class="btn btn-outline" onclick="copyAllNames()">
+                📋 复制全部
+            </button>
+        </section>
+
+        <!-- 分类筛选 -->
+        <div class="category-tabs">
+            <span class="tag active" onclick="filterCategory(this, 'all')">全部</span>
+            <span class="tag" onclick="filterCategory(this, 'cool')">高冷/拽文</span>
+            <span class="tag" onclick="filterCategory(this, 'cute')">可爱/甜心</span>
+            <span class="tag" onclick="filterCategory(this, 'ancient')">古风/诗意</span>
+            <span class="tag" onclick="filterCategory(this, 'funny')">搞笑/沙雕</span>
+        </div>
+
+        <!-- 网名展示网格 -->
+        <section class="names-grid" id="namesContainer">
+            <!-- 卡片 1 -->
+            <article class="name-card" data-category="cool">
+                <div>
+                    <div class="name-couple">
+                        <div class="name-item male">且听风吟念旧人</div>
+                        <div class="divider">❤</div>
+                        <div class="name-item female">静待花开遇故知</div>
+                    </div>
+                </div>
+                <div class="name-actions">
+                    <button class="action-btn" onclick="copyName(this)">复制男名</button>
+                    <button class="action-btn" onclick="copyName(this)">复制女名</button>
+                </div>
+            </article>
+
+            <!-- 卡片 2 -->
+            <article class="name-card" data-category="cute">
+                <div>
+                    <div class="name-couple">
+                        <div class="name-item male">想把星星摘给你</div>
+                        <div class="divider">❤</div>
+                        <div class="name-item female">想借月亮抱抱你</div>
+                    </div>
+                </div>
+                <div class="name-actions">
+                    <button class="action-btn" onclick="copyName(this)">复制男名</button>
+                    <button class="action-btn" onclick="copyName(this)">复制女名</button>
+                </div>
+            </article>
+
+            <!-- 卡片 3 -->
+            <article class="name-card" data-category="ancient">
+                <div>
+                    <div class="name-couple">
+                        <div class="name-item male">半世流离半世安</div>
+                        <div class="divider">❤</div>
+                        <div class="name-item female">一语情深一语长</div>
+                    </div>
+                </div>
+                <div class="name-actions">
+                    <button class="action-btn" onclick="copyName(this)">复制男名</button>
+                    <button class="action-btn" onclick="copyName(this)">复制女名</button>
+                </div>
+            </article>
+
+            <!-- 卡片 4 -->
+            <article class="name-card" data-category="funny">
+                <div>
+                    <div class="name-couple">
+                        <div class="name-item male">我养的小猪猪</div>
+                        <div class="divider">❤</div>
+                        <div class="name-item female">被猪养的小猪猪</div>
+                    </div>
+                </div>
+                <div class="name-actions">
+                    <button class="action-btn" onclick="copyName(this)">复制男名</button>
+                    <button class="action-btn" onclick="copyName(this)">复制女名</button>
+                </div>
+            </article>
+
+            <!-- 卡片 5 -->
+            <article class="name-card" data-category="cool">
+                <div>
+                    <div class="name-couple">
+                        <div class="name-item male">此间少年已白头</div>
+                        <div class="divider">❤</div>
+                        <div class="name-item female">彼时故人终不归</div>
+                    </div>
+                </div>
+                <div class="name-actions">
+                    <button class="action-btn" onclick="copyName(this)">复制男名</button>
+                    <button class="action-btn" onclick="copyName(this)">复制女名</button>
+                </div>
+            </article>
+
+            <!-- 卡片 6 -->
+            <article class="name-card" data-category="cute">
+                <div>
+                    <div class="name-couple">
+                        <div class="name-item male">你是我的小太阳</div>
+                        <div class="divider">❤</div>
+                        <div class="name-item female">我是你的小月亮</div>
+                    </div>
+                </div>
+                <div class="name-actions">
+                    <button class="action-btn" onclick="copyName(this)">复制男名</button>
+                    <button class="action-btn" onclick="copyName(this)">复制女名</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- 生成器演示区域 -->
+        <section class="generator-section">
+            <h2>🎲 随机生成器</h2>
+            <p style="color: #666; margin-top: 10px;">输入你的名字或喜好，AI帮你生成专属6字网名</p>
+            <div class="generator-result" id="generatorResult">
+                <div class="result-couple">
+                    <div class="result-item">一屋两人三餐四季</div>
+                    <span class="heart-icon">❤</span>
+                    <div class="result-item">满眼星辰皆是为你</div>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #888;">已生成一对高甜风格网名</p>
+                <div style="margin-top: 20px;">
+                    <button class="btn btn-outline" onclick="generateCoupleNames()">🔄 再生成一对</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>关于我们</h3>
+                    <ul>
+                        <li><a href="#">网站介绍</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>热门分类</h3>
+                    <ul>
+                        <li><a href="#">3字情侣名</a></li>
+                        <li><a href="#">4字情侣名</a></li>
+                        <li><a href="#">5字情侣名</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>使用帮助</h3>
+                    <ul>
+                        <li><a href="#">如何复制</a></li>
+                        <li><a href="#">网名修改建议</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 6个字的情侣网名网. All Rights Reserved. 本站所有内容仅供娱乐参考.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的筛选功能
+        function filterCategory(element, category) {
+            // 更新标签样式
+            document.querySelectorAll('.tag').forEach(tag => tag.classList.remove('active'));
+            element.classList.add('active');
+
+            // 筛选卡片
+            const cards = document.querySelectorAll('.name-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 复制单个名字功能
+        function copyName(button) {
+            const nameItem = button.parentElement.parentElement.querySelector('.name-item');
+            const text = nameItem.innerText;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.innerText;
+                button.innerText = '✅ 已复制';
+                button.style.background = '#e8f5e9';
+                button.style.color = '#2e7d32';
+                button.style.borderColor = '#2e7d32';
+                
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.style.background = '';
+                    button.style.color = '';
+                    button.style.borderColor = '';
+                }, 1500);
+            }).catch(err => {
+                console.error('复制失败:', err);
+            });
+        }
+
+        // 复制全部名字功能
+        function copyAllNames() {
+            const cards = document.querySelectorAll('.name-card');
+            let allText = "";
+            
+            cards.forEach((card, index) => {
+                const maleName = card.querySelector('.male').innerText;
+                const femaleName = card.querySelector('.female').innerText;
+                allText += `【${index + 1}】男：${maleName}  女：${femaleName}\n`;
+            });
+
+            navigator.clipboard.writeText(allText).then(() => {
+                alert('已复制全部网名到剪贴板！');
+            }).catch(err => {
+                console.error('复制失败:', err);
+            });
+        }
+
+        // 生成器模拟功能
+        function generateCoupleNames() {
+            const resultDiv = document.getElementById('generatorResult');
+            const names = [
+                ['贩卖黄昏的便利店', '收集星星的便利店'],
+                ['以此敬这漫长岁月', '以此敬这短暂青春'],
+                ['在此刻拥抱你怀里', '在余生守护你身边'],
+                ['你是人间四月天', '你是世间绝色颜'],
+                ['风止于秋水', '我止于你'],
+                ['南山南', '北秋悲']
+            ];
+            
+            const randomPair = names[Math.floor(Math.random() * names.length)];
+            
+            resultDiv.style.display = 'block';
+            resultDiv.querySelector('.result-item:first-child').innerText = randomPair[0];
+            resultDiv.querySelector('.result-item:last-child').innerText = randomPair[1];
+            
+            // 滚动到结果区域
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>
